@@ -1,0 +1,39 @@
+﻿@model Order
+
+<h2>Place your order.</h2>
+<p>
+    Please enter your details, and don't forget to check the carry out box.
+</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="PlaceOrder" method="post">
+
+    <h3>Customer details</h3>
+    <div class="form-group">
+        <label>Name:</label><input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label><input asp-for="Phone" class="form-control" />
+    </div>
+    <h3>Options</h3>
+    <div class="checkbox">
+        <label>
+            <input asp-for="CarryOut" /> Carry Out
+        </label>
+    </div>
+    <h3>Carry Out Deatils</h3>
+    <div class="form-group">
+        <label>Carry Out Date</label><input asp-for="CarryOutDate" class="form-control" />
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Place Order" />
+    </div>
+
+    <a class="btn btn-sm btn-secondary navbar-btn"
+       asp-controller="Cart" asp-action="Index"
+       asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+        <i class="fas fa-angle-double-left"></i>
+    </a>
+</form>

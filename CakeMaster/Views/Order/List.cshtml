@@ -1,0 +1,121 @@
+﻿@model IEnumerable<Order>
+
+@{
+    ViewBag.Title = "Orders";
+    Layout = "_AdminLayout";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+</head>
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Phone</td>
+                 <td class="text-center">
+                    <form asp-action="DeleteProduct" method="post">
+                        <a asp-action="EditOrder" class="btn btn-sm btn-warning"
+                           asp-route-productId="@item.OrderID">
+                            Edit
+                        </a>
+                        <input type="hidden" name="ProductID" value="@item.OrderID" />
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+        <tr>
+            <th>Customer Name</th>
+            <th>Phone #</th>
+            <th>Product(s)</th>
+            <th>Quantity</th>
+            <th>Carryout/Delivery</th>
+            <th>Delivery Date</th>
+            <th>Carryout Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (Order o in Model)
+        {
+            @foreach (CartLine line in o.Lines)
+            {
+                <tr>
+                    <td>@o.Name</td>
+                    <td>@o.Phone</td>
+                    <td>@line.Product.Name</td>
+                    <td>@line.Quantity</td>
+                    @if (o.Delivery == true)
+                    {
+                        <th>Delivery</th>
+                    }
+                    @if (o.CarryOut == true)
+                    {
+                        <th>Carry Out</th>
+                    }
+                    @if (o.DeliveryDate != null || o.DeliveryDate != default)
+                    {
+                        <th>@o.DeliveryDate</th>
+                    }
+                    @if (o.CarryOutDate != null || o.CarryOutDate != default)
+                    {
+                        <th>@o.CarryOutDate</th>
+                    }
+                    @if (o.Status == null)
+                    {
+                        <th>New Order</th>
+                    }
+                    @if (o.Status != null)
+                    {
+                        <th>@o.Status</th>
+                    }
+                    <td>
+                        <form asp-action="MarkCompleted" method="post">
+                            <input type="hidden" name="orderId" value="@o.OrderID" />
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Completed
+                            </button>
+                        </form>
+                        <form asp-action="DeleteOrder" method="post">
+                            <a asp-action="EditOrder" class="btn btn-sm btn-warning"
+                               asp-route-productId="@o.OrderID">
+                                Edit
+                            </a>
+                            <input type="hidden" name="OrderID" value="@o.OrderID" />
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+
+
+                </tr>
+            }
+        }
+    </table>
+}
+else
+{
+    <div class="text-center">No Orders = [</div>
+}
+
+<div class="text-center">
+    <a asp-area="" asp-controller="Order" asp-action="DeliveryInfo" class="btn btn-primary">View Delivery Info</a>
+</div>
+
+<a class="btn btn-sm btn-secondary navbar-btn"
+   asp-controller="Admin" asp-action="Index"
+   asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+    <i class="fas fa-angle-double-left"></i>
+</a>

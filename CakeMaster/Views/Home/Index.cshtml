@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    body, h1, h2 {
+        font-family: "Raleway", sans-serif
+    }
+
+    body, html {
+        height: 100%
+    }
+
+    p {
+        line-height: 2
+    }
+
+    .bgimg, .bgimg2 {
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+
+<div class="text-center">
+    <a asp-area="" asp-controller="Product" asp-action="List" class="btn btn-primary">View list of products</a>
+</div>
