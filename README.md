@@ -62,6 +62,9 @@ On the Order placed will display a THANK YOU to indicate the order has been reci
 ## ProjectPlan
 Follow this link to see my current and previous tasks.
 
+## Current Project
+Follow this link to see my current project description and the link to my project [Project](https://github.com/solorzano-christopher/CakeMaster/tree/master/CakeMaster)
+
 ## TestReport
 ![RTM](https://user-images.githubusercontent.com/52970486/68289719-7f7a1880-003b-11ea-87f5-c31f7a91d0a5.PNG)
 
