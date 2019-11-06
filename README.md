@@ -35,11 +35,11 @@ for the customer to view in another page to keep an eye on their order.
   
  - System Accessibility 
   1. System shall store products into a databse 
-	2. System shall correctly display the price of order
+  2. System shall correctly display the price of order
   3. System shall display the correct product with price and description
-	4. System shall save all orders into a database
-	5. System shall be able to display order to admin and user
-	6. System shall be able to prevent user from accessing Admin pages.
+  4. System shall save all orders into a database
+  5. System shall be able to display order to admin and user
+  6. System shall be able to prevent user from accessing Admin pages.
   
  - Software 
   1. System shall be writing in C# and ASP.NET
