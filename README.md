@@ -46,17 +46,12 @@ for the customer to view in another page to keep an eye on their order.
   2. System database shall be in SQL
 
 ## DataDesign
-![2](https://user-images.githubusercontent.com/52970486/62845458-05750600-bc7d-11e9-88d8-5f909af9b9dd.PNG)
 
 ## UIDesign
 # WireFrame
 
 ## ProjectPlan
 Follow this link to see my current and previous tasks.
-
-# ProtoypeLink
-
-Click here to see my prototype . . . [Prototype](https://github.com/solorzano-christopher/MSSA-Project/blob/master/My%20Companion-Finder/README.md)
 
 ## TestReport
 
