@@ -46,15 +46,24 @@ for the customer to view in another page to keep an eye on their order.
   2. System database shall be in SQL
 
 ## DataDesign
+![DataDesign](https://user-images.githubusercontent.com/52970486/68289687-6f623900-003b-11ea-9574-d584c84b8262.PNG)
 
 ## UIDesign
 # WireFrame
+![HomePage](https://user-images.githubusercontent.com/52970486/68289716-7f7a1880-003b-11ea-8b6c-80db8df671f9.PNG)
+On the Home Page will display a welcome and a link to view the products to place the order.
+
+![Product List](https://user-images.githubusercontent.com/52970486/68289718-7f7a1880-003b-11ea-97d7-c2f50be45f6b.PNG)
+On the product list this will display the products with their name and the option to add the product to their order.
+
+![Order placed](https://user-images.githubusercontent.com/52970486/68289717-7f7a1880-003b-11ea-8802-5d7a6b7de1aa.PNG)
+On the Order placed will display a THANK YOU to indicate the order has been recieved and will be made. 
 
 ## ProjectPlan
 Follow this link to see my current and previous tasks.
 
 ## TestReport
-
+![RTM](https://user-images.githubusercontent.com/52970486/68289719-7f7a1880-003b-11ea-87f5-c31f7a91d0a5.PNG)
 
 ## UnifiedModelingLanguageDiagram
-
+![UnifiedModelingLanguageDiagram](https://user-images.githubusercontent.com/52970486/68289720-7f7a1880-003b-11ea-93f5-f8a0414b6dba.PNG)
