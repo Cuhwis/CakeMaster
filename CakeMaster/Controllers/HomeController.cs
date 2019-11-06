@@ -30,6 +30,5 @@ namespace CakeMaster.Controllers
         }
 
         public ViewResult Portfolio() => View();
-        public ViewResult Contact() => View();
     }
 }

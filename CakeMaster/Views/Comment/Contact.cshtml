@@ -1,0 +1,36 @@
+﻿@model Comment
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact Us</h1>
+<h4>Feel free to contact us for any information regarding your order.</h4>
+ <br />
+<h4>We will get back to you as soon as possible.</h4>
+ <br />
+<h3>E-mail</h3>
+<h4>cakemaster@outlook.com</h4>
+<br />
+<h3>Phone Number</h3>
+<h4>574-527-9056</h4>
+<br/>
+<br/>
+<h1>Leave a Comment</h1>
+<br/>
+<form asp-action="Contact" method="post">
+
+    <h3>Name (optional) </h3>
+    <div class="form-group">
+        <label>Name:</label><input asp-for="Name" class="form-control" />
+    </div>
+    <h3>Comment</h3>
+    <div class="form-group">
+        <label>Name:</label><input asp-for="Text" class="form-control" />
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Send Comment" />
+    </div>
+
+</form>

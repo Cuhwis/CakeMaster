@@ -1,26 +1,84 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<h1>Welcome</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-    body, h1, h2 {
-        font-family: "Raleway", sans-serif
-    }
-
-    body, html {
-        height: 100%
-    }
-
-    p {
-        line-height: 2
-    }
-
-    .bgimg, .bgimg2 {
-        min-height: 100%;
-        background-position: center;
-        background-size: cover;
+    .mySlides {
+        display: none;
     }
 </style>
+<body>
 
-<div class="text-center">
-    <a asp-area="" asp-controller="Product" asp-action="List" class="btn btn-primary">View list of products</a>
-</div>
+    @*<div class="w3-container">
+        <h2>Slideshow Caption</h2>
+        <p>Add a caption text for each image slide with the w3-display-* classes (topleft, topmiddle, topright, bottomleft, bottommiddle, bottomright or middle).</p>
+    </div>*@
+
+    <div class="w3-content w3-display-container">
+
+        <div class="w3-display-container mySlides">
+            <img src="~/CakeMaster Pictures/10inch.jpg" style="width:100%">
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <img src="~/CakeMaster Pictures/Largeweddingtwo.jpg" style="width:100%">
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <img src="~/CakeMaster Pictures/RTD2.jpg" style="width:100%">
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <img src="~/CakeMaster Pictures/15two.jpg" style="width:100%">
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <img src="~/CakeMaster Pictures/graduation.jpg" style="width:100%">
+        </div>
+
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

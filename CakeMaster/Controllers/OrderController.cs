@@ -89,13 +89,13 @@ namespace CakeMaster.Controllers
 
         //Admin/Order View
         public ViewResult EditOrder(int orderId) =>
-            View(repository.Orders.FirstOrDefault(p => p.OrderID == orderId));
+            View(repository.Orders.FirstOrDefault(o => o.OrderID == orderId));
         [HttpPost]
         public IActionResult EditOrder(Order order)
         {
             if (ModelState.IsValid)
             {
-                repository.SaveOrder(order);
+                repository.AdminSaveOrder(order);
                 TempData["message"] = $"{order.Name} has been saved";
                 return RedirectToAction("List");
             }
@@ -110,6 +110,8 @@ namespace CakeMaster.Controllers
         public ViewResult List() => View(repository.Orders.Where(o => !o.Shipped));
         [Authorize]
         public ViewResult DeliveryInfo() => View(repository.Orders.Where(o => !o.Shipped));
+        [Authorize]
+        public ViewResult CompletedOrders() => View(repository.Orders.Where(o => o.Shipped));
 
         [HttpPost]
         [Authorize]

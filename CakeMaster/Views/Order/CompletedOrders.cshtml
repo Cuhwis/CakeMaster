@@ -4,7 +4,7 @@
     ViewData["Title"] = "DeliveryInfo";
     Layout = "_AdminLayout";
 }
-<h1>Delivery Info</h1>
+<h1>Completed Orders</h1>
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/css/site.css" />
@@ -13,29 +13,21 @@
 <table class="table table-bordered table-striped">
     <tr>
         <th>Customer Name</th>
-        <th>Line One</th>
-        <th>Line Two</th>
-        <th>Line Three</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
-        <th>Delivery Date</th>
+        <th>OrderID</th>
+        <th>Product</th>
+        <th>Quantity</th>
     </tr>
         @foreach (Order o in Model)
         {
             @foreach (CartLine line in o.Lines)
             {
                 <tr>
-                     @if(o.Delivery == true)
+                     @if (o.Shipped == true)
                       {
                         <td>@o.Name</td>
-                        <td>@o.Line1</td>
-                        <td>@o.Line2</td>
-                        <td>@o.Line3</td>
-                        <td>@o.City</td>
-                        <td>@o.State</td>
-                        <td>@o.Zip</td>
-                        <td>@o.DeliveryDate</td>
+                        <td>@o.OrderID</td>
+                        <td>@line.Product</td>
+                        <td>@line.Quantity</td>
                       }
                 </tr>
             }
@@ -43,7 +35,8 @@
 </table>
 
 <a class="btn btn-sm btn-secondary navbar-btn"
-   asp-controller="Order" asp-action="List"
+   asp-controller="Admin" asp-action="Index"
    asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
     <i class="fas fa-angle-double-left"></i>
 </a>
+

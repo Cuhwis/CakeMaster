@@ -14,31 +14,9 @@
 {
     <table class="table table-bordered table-striped">
         <tr>
-            <th>Name</th>
-            <th>Phone</th>
-        </tr>
-        @foreach(var item in Model)
-        {
-            <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Phone</td>
-                 <td class="text-center">
-                    <form asp-action="DeleteProduct" method="post">
-                        <a asp-action="EditOrder" class="btn btn-sm btn-warning"
-                           asp-route-productId="@item.OrderID">
-                            Edit
-                        </a>
-                        <input type="hidden" name="ProductID" value="@item.OrderID" />
-                        <button type="submit" class="btn btn-danger btn-sm">
-                            Delete
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        }
-        <tr>
             <th>Customer Name</th>
             <th>Phone #</th>
+            <th>Description</th>
             <th>Product(s)</th>
             <th>Quantity</th>
             <th>Carryout/Delivery</th>
@@ -54,6 +32,7 @@
                 <tr>
                     <td>@o.Name</td>
                     <td>@o.Phone</td>
+                    <td>@o.Description</td>
                     <td>@line.Product.Name</td>
                     <td>@line.Quantity</td>
                     @if (o.Delivery == true)
@@ -80,26 +59,20 @@
                     {
                         <th>@o.Status</th>
                     }
-                    <td>
-                        <form asp-action="MarkCompleted" method="post">
-                            <input type="hidden" name="orderId" value="@o.OrderID" />
-                            <button type="submit" class="btn btn-sm btn-danger">
-                                Completed
-                            </button>
-                        </form>
-                        <form asp-action="DeleteOrder" method="post">
-                            <a asp-action="EditOrder" class="btn btn-sm btn-warning"
-                               asp-route-productId="@o.OrderID">
-                                Edit
-                            </a>
-                            <input type="hidden" name="OrderID" value="@o.OrderID" />
-                            <button type="submit" class="btn btn-danger btn-sm">
-                                Delete
-                            </button>
-                        </form>
-                    </td>
-
-
+                <td>
+                    <form asp-action="MarkCompleted" method="post">
+                        <input type="hidden" name="orderId" value="@o.OrderID" />
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            Completed
+                        </button>
+                    </form>
+                    <form asp-action="DeleteOrder" method="post">
+                        <a asp-action="EditOrder" class="btn btn-sm btn-warning"
+                           asp-route-productId="@o.OrderID">
+                            Edit
+                        </a>
+                    </form>
+                </td>
                 </tr>
             }
         }

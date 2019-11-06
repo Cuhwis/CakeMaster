@@ -19,6 +19,7 @@ namespace CakeMaster.Models
         public string Name { get; set; }
         [Required(ErrorMessage = "Please enter a Phone Number")]
         public string Phone { get; set; }
+        public string Description { get; set; }
 
         //Carry Out Option
         public bool CarryOut { get; set; }

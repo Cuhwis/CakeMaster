@@ -27,6 +27,7 @@ namespace CakeMaster.Migrations
                     Delivery = table.Column<bool>(nullable:true),
                     CarryOutDate = table.Column<DateTime>(nullable:true),
                     DeliveryDate = table.Column<DateTime>(nullable:true),
+                    Description = table.Column<string>(nullable:true),
                     Status = table.Column<string>(nullable:true)
                 },
                 constraints: table =>

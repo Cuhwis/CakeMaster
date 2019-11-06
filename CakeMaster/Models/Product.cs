@@ -19,7 +19,6 @@ namespace CakeMaster.Models
         public decimal Price { get; set; }
         [Required(ErrorMessage = "Please specify a category")]
         public string Category { get; set; }
-
         //To be added if there's time
         public string Image { get; set; }
     }

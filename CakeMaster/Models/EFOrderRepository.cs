@@ -23,9 +23,32 @@ namespace CakeMaster.Models
             {
                 context.Orders.Add(order);
             }
-            context.SaveChanges();
+            else
+            {
+                Order dbEntry = context.Orders
+                .FirstOrDefault(o => o.OrderID == order.OrderID);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = order.Name;
+                    dbEntry.Phone = order.Phone;
+                    dbEntry.CarryOut = order.CarryOut;
+                    dbEntry.CarryOutDate = order.CarryOutDate;
 
-            //Need to add more info refer to EFProductRepo.
+                    dbEntry.Delivery = order.Delivery;
+                    dbEntry.DeliveryDate = order.DeliveryDate;
+                    dbEntry.Line1 = order.Line1;
+                    dbEntry.Line2 = order.Line2;
+                    dbEntry.Line3 = order.Line3;
+                    dbEntry.City = order.City;
+                    dbEntry.State = order.State;
+                    dbEntry.Zip = order.Zip;
+                    dbEntry.Country = order.Country;
+
+                    dbEntry.Shipped = order.Shipped;
+                    dbEntry.Status = order.Status;
+                }
+            }
+            context.SaveChanges();
         }
         public void AdminSaveOrder(Order order)
         {
