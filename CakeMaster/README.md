@@ -24,3 +24,15 @@ Once you have placed the order you will be thanked and give the option to view y
 # Admin
 This is one of many admin pages. This one will display the information of all orders for the admin to change the status of the order throughout the order system.
 ![Admin Order View](https://user-images.githubusercontent.com/52970486/68290841-7d18be00-003d-11ea-9e30-5ad960c5a652.PNG)
+
+# Solution
+### Technologies
+To create a nice look to the website I looked around in [Bootswatch](https://bootswatch.com/), which allows you to download free themes
+of bootstrap which is a CSS.file. Cascading style sheet is used to create a layout for you web pages. They can define the text styles, table sizes, and a varity more aspects. I was also able to use a bit of Javascript in afew parts in my webiste which was fun to play with and will definietly be something I want to learn more of. But it is use to creat interactive effects.
+
+### Paths Explored 
+When creating this project I mostly used chapters in the book to help me create this project. However, the book does not have all the answers to everything you would like to implement. So for me whever there was a feature I wanted to add on my site I would start by looking in the book and later looked around other parts in the web until I was able to find a walkthrough that was able to teach me on how to implemenet something I wanted to add to my project.
+
+### Future Plans
+The goal of this project was to learn more about creating web applications. I was hoping to have a good enough project to use for real use as a cake ordering application but there are many features that are missing with my project before I go through deploying this project. I want to enable User accounts. As time went by I was very unsucessful in adding user accounts and linking their orders just to their accounts. I was able to make due without having this but this is a major feature I would like to add later on. Later on I want to be able to create a custom order option so customers will have more of a choice when ordering their Cakes.
+
